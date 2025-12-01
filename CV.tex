@@ -1,0 +1,497 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.4, 13 Nov 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+% Suppress pdfx informational warning about RGB color model (must be before \documentclass)
+\RequirePackage{silence}
+\WarningFilter{pdfx}{Setting all color commands to rgb}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1cm,columnsep=1cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\iftutex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\name{Nghia Trung Nguyen (He/Him)}
+\tagline{PhD Candidate in Computer Science • Looking for SE, ML/AI Engineer, Data Scientist Roles}
+%% You can add multiple photos on the left or right
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+% \photoR{2.5cm}{Nghia}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{nghiant2498@gmail.com}
+  \phone{951-756-8174 (669-245-5202)}
+  \linkedin{ntrnghia}
+  \github{ntrnghia}
+  \mailaddress{San Jose, CA (Open to remote)}
+%   \location{United States}
+%   \homepage{www.homepage.com}
+  % \facebook{ntrnghia}
+%   \xtwitter{@ntrnghia24}
+
+%   \orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Graduate Research \& Teaching Assistant}{\href{https://en.wikipedia.org/wiki/Bir_Bhanu}{Prof. Bir Bhanu, UCR} | 3D Person Identification, Computer Vision}{Apr 2023 - March 2024}{Riverside, CA}
+\begin{itemize}
+
+\item 
+\begin{justify}
+Implemented and evaluated a person identification method on 3D meshes from RGB images using \textbf{local geometry shape features}.
+\end{justify}
+
+\item 
+\begin{justify}
+Research on \textbf{3D body models}, \textbf{human regression methods} and \textbf{objects classification methods}.
+\end{justify}
+
+\item 
+\begin{justify}
+\textbf{Averaged} SMPL-X shape parameters from \textbf{multiple images} to achieve \textbf{33\% higher identification accuracy} vs.\ single image.
+\end{justify}
+
+% \item 
+% \begin{justify}
+% Using with Deep Learning model.
+% \end{justify}
+
+\end{itemize}
+
+\smallskip
+
+\cvevent{Software Engineer}{\href{https://fpt.vn}{FPT Telecom} | Speech to Text, Airflow}{Jan 2022 – Aug 2022}{Ho Chi Minh, Vietnam}
+
+Built a ML model to detect Vietnamese keywords from audios in customer service using a \textbf{fine-tuned wav2vec2 model}.
+
+\begin{itemize}
+
+\item
+\begin{justify}
+Achieved \textbf{state-of-the-art equivalent performance} with 4.4 WER on the Vivos dataset and 8.1 WER on the Commonvoice dataset.
+\end{justify}
+
+\item
+\begin{justify}
+Reduced the time of automatic pipelines by \textbf{75\%}, allowing the system to detect keywords from customer service audios in \textbf{real-time}.
+\end{justify}
+
+\item 
+\begin{justify}
+\textcolor{emphasis}{\bfseries{Awarded the best employee in Q1/2022.}}
+\end{justify}
+
+\end{itemize}
+
+\smallskip
+
+\cvevent{Software Engineer}{\href{https://zalo.me}{Zalo, VNG Group} | CNN, Audio Processing, Search System}{Dec 2020 – Dec 2021}{Ho Chi Minh, Vietnam}
+\begin{itemize}
+
+\item
+\begin{justify}
+Created a system to index \textbf{9M music audios} for many tasks such as audio retrieval and audio de-duplication.
+\end{justify}
+
+\item
+\begin{justify}
+Designed a \textbf{customized deep CNN, Siamese Network} to extract audio features and embed audios into a vector space.
+\end{justify}
+
+\item
+\begin{justify}
+Detected similar audios (instrumental, remix, cover, etc) in a music database \textbf{accurately} and quickly (about \textbf{10 ms} per query).
+\end{justify}
+
+\end{itemize}
+
+\smallskip
+
+\cvevent{Software Engineer Intern}{\href{https://www.bosch.com.vn/our-company/bosch-in-vietnam/ho-chi-minh-city-rbvh/}{Bosch} | Business Solution, Supply Chain, Machine Learning}{May 2019 – Sep 2019}{Ho Chi Minh, Vietnam}
+\begin{itemize}
+
+\item
+\begin{justify}
+Found the optimal location of distribution centers (DCs) among \textbf{10K outlets} to optimize logistic costs and outlet revenues.
+\end{justify}
+
+\item
+\begin{justify}
+Used \textbf{gradient descent} and a \textbf{customized loss function} to select k DCs that have the best locations and satisfy many defined criteria.
+\end{justify}
+
+% \item
+% \begin{justify}
+% Used \textbf{gradient descent} and a \textbf{customized loss function} to select k DCs that minimize the total distances from them to outlets and prioritize high-revenue outlets.
+% \end{justify}
+
+\end{itemize}
+
+\cvsection{Projects}
+
+% \textbf{Human re-identification with Market-1501 -- Deep Learning Course}
+% \begin{itemize}
+% \item \textbf{95\% top-1 acc}  and \textbf{0.65 mAP} with a \textbf{custom CNN architecture}.
+% \end{itemize}
+
+% \textbf{Cross-Language Plagiarism Detection | Natural Language Processing, BERT, Transformer, Python, Flask, Angular, Azure}
+\textbf{Plagiarism Detection | NLP, Transformer, Flask, Angular, Azure}
+\begin{itemize}
+
+\item
+\begin{justify}
+Engineered a plagiarism detection web for Vietnamese (VN) and English (EN) academic papers, saving researchers \textbf{40+ hours monthly}.
+% Built a web application to \textbf{detect plagiarism} between a given Vietnamese (VN) paper and English (EN) academic papers on the internet.
+\end{justify}
+
+\item
+\begin{justify}
+Fine-tuned \textbf{multilingual BERT model} to detect similarities between VN/EN sentences and achieve \textbf{82\% Pearson correlation} on STS-B.
+\end{justify}
+
+% \item
+% \begin{justify}
+% Automated the whole pipeline to get results in \textbf{less than 1 minute}.
+% \end{justify}
+
+\end{itemize}
+
+\textbf{Cloud Load Balancing | Nodejs, Python FastAPI, Rust Actix, Jmeter, Hey, Grafana, Prometheus, Nginx, Docker Swarm, K8s, GCP}
+\begin{itemize}
+
+\item
+\begin{justify}
+Set up \textbf{10+ API servers} to evaluate load balancing in \textbf{5+ cloud techniques} including Nginx, K8s and Docker Swarm.
+\end{justify}
+
+% \item
+% \begin{justify}
+% Use multiple test tools and visualization tools to benchmark.
+% \end{justify}
+
+\end{itemize}
+
+% \textbf{Time Series Matching and Optimization - Bosch Internship}
+% \begin{itemize}
+% \item
+% \begin{justify}
+% By using \textbf{vectorization} and \textbf{muti-threading}, find top-k stock charts that best match the given chart in thousands of 5-years time series.
+% \end{justify}
+% \end{itemize}
+
+\textbf{Get Link Website | Angular, Go, PostgreSQL, Nginx, K8s}
+\begin{itemize}
+\item Manage automated get link process for premium users, \textbf{saving huge time} compared to the official website.
+\end{itemize}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Summary}
+\begin{itemize}
+
+% \item
+% \begin{justify}
+% \textbf{I'm looking for Software Engineer, ML/AI Engineer, Data Scientist}
+% \end{justify}
+
+\item
+\begin{justify}
+\textbf{Experienced in machine learning model development, and algorithm design.}
+\end{justify}
+
+\item
+\begin{justify}
+\textbf{Skilled in software engineering with Python, Go, Angular, Posgres, Nginx, and K8s.}
+\end{justify}
+
+\item
+\begin{justify}
+\textbf{Key roles in multiple deep learning and data science projects, with many achievements.}
+\end{justify}
+
+\end{itemize}
+
+\smallskip
+
+\cvsection{Education}
+
+\cvevent{PhD Candidate in Computer Science}{\href{https://ucr.edu}{University of California, Riverside (UCR)}}{March 2027}{}
+
+\begin{itemize}
+
+\item 
+\begin{justify}
+Research on Video Scene Graph Generation under Prof Bir Bhanu's guidance.
+\end{justify}
+
+\end{itemize}
+
+\smallskip
+
+\cvevent{Master in Computer Science}{\href{https://ucr.edu}{University of California, Riverside (UCR)}}{March 2024}{GPA: 3.55 / 4.0}
+
+\begin{itemize}
+
+\item 
+\begin{justify}
+\textcolor{emphasis}{\bfseries\href{https://ucrpc.cs.ucr.edu/F23/winners/index.html\#grad}{$1^{st}$/$2^{nd}$ Prizes} (over 100 teams) at UCR Programming Challenges 2023/2022.}
+\end{justify}
+
+% \item 
+% \begin{justify}
+% \textcolor{emphasis}{\bfseries\href{https://ucrpc.cs.ucr.edu/F22/winners/index.html\#grad}{$2^{nd}$ Prize} (109 teams) at UCRPC 2022.}
+% \end{justify}
+
+\item 
+\begin{justify}
+Related courses: Deep Learning (A); Machine Learning (A); Data Mining Techniques (A); Design and Analysis Algorithms (A).
+\end{justify}
+
+\end{itemize}
+
+% \textcolor{emphasis}{\bfseries\href{https://ucrpc.cs.ucr.edu/F23/winners/index.html\#grad}{First Prize} (89 teams) at UCRPC 2023} \\
+% \textcolor{emphasis}{\bfseries\href{https://ucrpc.cs.ucr.edu/F22/winners/index.html\#grad}{Second Prize} (109 teams) at UCRPC 2022} \\
+
+% \divider
+\smallskip
+
+\cvevent{BS in Computer Science - APCS\footnote{Advanced Program in Computer Science (HCMUS) - Top 1 entrance scores in Southern Vietnam.}}{\href{https://hcmus.edu.vn}{Ho Chi Minh University of Science (HCMUS)}}{Nov 2020}{GPA: 3.45 / 4.0}
+
+\begin{itemize}
+
+\item 
+\begin{justify}
+\textcolor{emphasis}{\bfseries{HCMUS IT Faculty Scholarship 2016.}}
+\end{justify}
+
+\item 
+\begin{justify}
+Related courses: NLP (A+); Computer Vision (A); \href{https://www.coursera.org/account/accomplishments/specialization/7XMWPS96G3XA}{Coursera Deep Learning}.
+\end{justify}
+
+\end{itemize}
+
+% \divider
+\smallskip
+
+\cvevent{High School - Math Specialized}{\href{https://truongthptchuyen.vinhuni.edu.vn/}{High School for Gifted Students, Vinh Uni}}{Aug 2016}{GPA: 8.8/10 (Top 1\%)}
+% GPA: 8.8 / 10.00 -- Top 5\% class of 2016
+
+\begin{itemize}
+
+\item 
+\textcolor{emphasis}{\bfseries{Scholarships of National Key Program for Mathematical Development 2015.}} \\
+
+\item
+\textcolor{emphasis}{\bfseries{Third Prize, Provincial Math Contest 2015.}} \\
+
+\end{itemize}
+% \smallskip
+
+% \cvsection{Achievements}
+
+% \cvachievement{\faTrophy}{\href{https://ucrpc.cs.ucr.edu/F23/winners/index.html\#grad}{First Prize} (89 teams) and \href{https://ucrpc.cs.ucr.edu/F22/winners/index.html\#grad}{Second Prize} (109 teams) at UCRPC}{Fall 2023, Fall 2022}
+
+% % \divider
+
+% \cvachievement{\faTrophy}{Best Employee in Q1 -- FPT Telecom}{Q1 2022}
+
+% % \divider
+
+% % \cvachievement{\faTrophy}{HCMUS Faculty of IT Scholarship}{2016}
+
+% % \divider
+
+% \cvachievement{\faTrophy}{Scholarships of National Key Program for Mathematical Development}{2015}
+
+% \medskip
+
+% \cvsection{Strengths}
+
+% \cvtag{Study quickly}
+% \cvtag{Hard-working}\\
+
+% \divider\smallskip
+
+% \cvtag{Natural Language Processing}
+% \cvtag{Voice Processing}\\
+
+% \medskip
+
+% \cvsection{Selected Courses}
+% % \begin{itemize}
+% % \begin{justify}
+% \textbf{
+% NLP (A+); Computer Vision (A); Deep Learning (A); Machine Learning (A); Data Mining Techniques (A); Design and Analysis Algorithms (A); \href{https://www.coursera.org/account/accomplishments/specialization/7XMWPS96G3XA}{Coursera Deep Learning}
+% }
+% % \end{justify}
+% % \end{itemize}
+
+\cvsection{Skills}
+
+\begin{itemize}
+\item
+\textbf{Language:} \underline{Python}, \underline{C++}, Go, Rust, Java, C\#
+\item
+\textbf{Web:} \underline{Typescript}, HTML, CSS, JavaScript
+\item
+\textbf{Framework:} \underline{Angular}, \underline{FastAPI}, \underline{Flask}, React
+\item
+\textbf{DL Framework:} \underline{PyTorch}, TensorFlow
+\item
+\textbf{Databases:} \underline{PostgreSQL}, \underline{MongoDB}
+\item
+\textbf{Tech:} \underline{K8s}, \underline{Nginx}, \underline{Prometheus}, \underline{Grafana}, Airflow, Kafka, Docker Swarm
+\item
+\textbf{Cloud:} \underline{Azure}, \underline{AWS}, \underline{GCP}, \underline{Vultr}
+\end{itemize}
+% \cvhighlight{Python}
+% \cvhighlight{C++}
+% \cvhighlight{Docker}
+% \cvtag{AWS}
+% \cvtag{MongoDB}
+% \cvhighlight{PyTorch}
+% \cvhighlight{K8s}
+% \cvtag{GCP}
+% \cvtag{Postgres}
+% \cvtag{Javascript}
+% \cvtag{Azure}
+% \cvtag{CSS}
+% \cvtag{Angular}
+% \cvtag{FastAPI}
+% \cvtag{HTML}
+
+% \cvsection{Hobbies}
+% Travel, playing video games, soccer, table-tennis, board games, billiard, badminton
+
+% \cvsection{Languages}
+
+% \cvskill{English}{4}
+
+% \divider
+
+% \cvskill{Vietnamese}{5}
+
+% \cvskill{German}{3.5} %% Supports X.5 values.
+
+% \cvsection{Wants}
+
+% Solve technical problems; Company with clear roles; Opportunities to progress; Individual contributor track; Learn and develop skills.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+% \medskip
+
+
+
+% \divider
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+
+\end{paracol}
+
+
+\end{document}
