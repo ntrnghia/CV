@@ -29,6 +29,19 @@
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 
+%%
+%% work harder in optimizing text layout. Typically shrinks text by 1/6 of page, enable
+%% it at the very end of the writing process, when you are just above the page limit
+%%
+\usepackage{microtype}
+
+%%
+%% Reduce hyphenation
+%%
+\hyphenpenalty=5000
+\tolerance=1000
+\emergencystretch=3em
+
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
 \iftutex
@@ -73,18 +86,18 @@
 
 \begin{document}
 \name{Nghia Trung Nguyen (He/Him)}
-\tagline{PhD Candidate in Computer Science • Looking for SE, ML/AI Engineer, Data Scientist Roles}
+\tagline{PhD Candidate in Computer Science • Looking for PhD Research, ML/AI Engineer, SE Intern Roles}
 %% You can add multiple photos on the left or right
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 % \photoR{2.5cm}{Nghia}
 
 \personalinfo{%
   % Not all of these are required!
-  \email{nghiant2498@gmail.com}
-  \phone{951-756-8174 (669-245-5202)}
+  \mailaddress{nghiant2498@gmail.com}
+  \phone{951-756-8174}
   \linkedin{ntrnghia}
   \github{ntrnghia}
-  \mailaddress{San Jose, CA (Open to remote)}
+  \location{San Jose, CA (Open to remote)}
 %   \location{United States}
 %   \homepage{www.homepage.com}
   % \facebook{ntrnghia}
@@ -123,22 +136,22 @@
 \begin{paracol}{2}
 \cvsection{Experience}
 
-\cvevent{Graduate Research \& Teaching Assistant}{\href{https://en.wikipedia.org/wiki/Bir_Bhanu}{Prof. Bir Bhanu, UCR} | 3D Person Identification, Computer Vision}{Apr 2023 - March 2024}{Riverside, CA}
+\cvevent{Graduate Research \& Teaching Assistant}{\href{https://en.wikipedia.org/wiki/Bir_Bhanu}{Prof. Bir Bhanu, UCR} | Computer Vision, 3D Understanding}{Sep 2022 - Present}{Riverside, CA}
 \begin{itemize}
 
 \item 
 \begin{justify}
-Implemented and evaluated a person identification method on 3D meshes from RGB images using \textbf{local geometry shape features}.
+Developed \textbf{3D person identiﬁcation} pipeline using local geometry features from RGB-reconstructed SMPL-X meshes.
 \end{justify}
 
 \item 
 \begin{justify}
-Research on \textbf{3D body models}, \textbf{human regression methods} and \textbf{objects classification methods}.
+Achieved \textbf{33\% improvement} in identiﬁcation accuracy by aggregating SMPL-X shape parameters across multiple images.
 \end{justify}
 
 \item 
 \begin{justify}
-\textbf{Averaged} SMPL-X shape parameters from \textbf{multiple images} to achieve \textbf{33\% higher identification accuracy} vs.\ single image.
+Research on \textbf{Video Scene Graph Generation} and \textbf{Event-Based Object Detection}. \textbf{2 papers waiting for review at CVPR 2026}.
 \end{justify}
 
 % \item 
@@ -150,7 +163,7 @@ Research on \textbf{3D body models}, \textbf{human regression methods} and \text
 
 \smallskip
 
-\cvevent{Software Engineer}{\href{https://fpt.vn}{FPT Telecom} | Speech to Text, Airflow}{Jan 2022 – Aug 2022}{Ho Chi Minh, Vietnam}
+\cvevent{Software Engineer}{\href{https://fpt.vn}{FPT Telecom} |  Speech Recognition, Model and Pipeline Optimization}{Jan 2022 – Aug 2022}{Ho Chi Minh, Vietnam}
 
 Built a ML model to detect Vietnamese keywords from audios in customer service using a \textbf{fine-tuned wav2vec2 model}.
 
@@ -168,7 +181,7 @@ Reduced the time of automatic pipelines by \textbf{75\%}, allowing the system to
 
 \item 
 \begin{justify}
-\textcolor{emphasis}{\bfseries{Awarded the best employee in Q1/2022.}}
+\textcolor{emphasis}{\bfseries{Awarded the Best Employee Q1/2022.}}
 \end{justify}
 
 \end{itemize}
@@ -180,17 +193,17 @@ Reduced the time of automatic pipelines by \textbf{75\%}, allowing the system to
 
 \item
 \begin{justify}
-Created a system to index \textbf{9M music audios} for many tasks such as audio retrieval and audio de-duplication.
+Architected audio retrieval system indexing \textbf{9M tracks} for similarity search and de-duplication.
 \end{justify}
 
 \item
 \begin{justify}
-Designed a \textbf{customized deep CNN, Siamese Network} to extract audio features and embed audios into a vector space.
+Designed custom \textbf{Siamese CNN} to learn audio embeddings, achieving \textbf{<10ms query latency} for real-time matching.
 \end{justify}
 
 \item
 \begin{justify}
-Detected similar audios (instrumental, remix, cover, etc) in a music database \textbf{accurately} and quickly (about \textbf{10 ms} per query).
+Built robust detection for audio variants (covers, remixes, instrumentals) with over \textbf{90\% precision and recall} across diverse genres.
 \end{justify}
 
 \end{itemize}
@@ -202,12 +215,7 @@ Detected similar audios (instrumental, remix, cover, etc) in a music database \t
 
 \item
 \begin{justify}
-Found the optimal location of distribution centers (DCs) among \textbf{10K outlets} to optimize logistic costs and outlet revenues.
-\end{justify}
-
-\item
-\begin{justify}
-Used \textbf{gradient descent} and a \textbf{customized loss function} to select k DCs that have the best locations and satisfy many defined criteria.
+Developed optimization algorithm to ﬁnd optimal distribution center locations among \textbf{10K+ outlets} using \textbf{gradient descent with custom loss functions}.
 \end{justify}
 
 % \item
@@ -225,18 +233,18 @@ Used \textbf{gradient descent} and a \textbf{customized loss function} to select
 % \end{itemize}
 
 % \textbf{Cross-Language Plagiarism Detection | Natural Language Processing, BERT, Transformer, Python, Flask, Angular, Azure}
-\textbf{Plagiarism Detection | NLP, Transformer, Flask, Angular, Azure}
+\textbf{Cross-Language Plagiarism Detection  | Natural Language Processing, Flask, Angular, Azure}
 \begin{itemize}
 
 \item
 \begin{justify}
-Engineered a plagiarism detection web for Vietnamese (VN) and English (EN) academic papers, saving researchers \textbf{40+ hours monthly}.
+Built plagiarism detection system for Vietnamese-English academic papers, saving researchers \textbf{40+ hours monthly}.
 % Built a web application to \textbf{detect plagiarism} between a given Vietnamese (VN) paper and English (EN) academic papers on the internet.
 \end{justify}
 
 \item
 \begin{justify}
-Fine-tuned \textbf{multilingual BERT model} to detect similarities between VN/EN sentences and achieve \textbf{82\% Pearson correlation} on STS-B.
+Fine-tuned \textbf{multilingual BERT} for cross-lingual similarity, achieving \textbf{82\% Pearson correlation} on STS-B.
 \end{justify}
 
 % \item
@@ -269,7 +277,7 @@ Set up \textbf{10+ API servers} to evaluate load balancing in \textbf{5+ cloud t
 % \end{justify}
 % \end{itemize}
 
-\textbf{Get Link Website | Angular, Go, PostgreSQL, Nginx, K8s}
+\textbf{Get Link Website | SolidJS, Go, PostgreSQL, Nginx, K8s}
 \begin{itemize}
 \item Manage automated get link process for premium users, \textbf{saving huge time} compared to the official website.
 \end{itemize}
@@ -288,17 +296,17 @@ Set up \textbf{10+ API servers} to evaluate load balancing in \textbf{5+ cloud t
 
 \item
 \begin{justify}
-\textbf{Experienced in machine learning model development, and algorithm design.}
+\textbf{Experienced in machine learning model development} for speech recognition, audio retrieval, and computer vision at scale.
 \end{justify}
 
 \item
 \begin{justify}
-\textbf{Skilled in software engineering with Python, Go, Angular, Posgres, Nginx, and K8s.}
+\textbf{Skilled in software engineering} with Python, Go, SolidJS, PostgreSQL, Nginx, and K8s.
 \end{justify}
 
 \item
 \begin{justify}
-\textbf{Key roles in multiple deep learning and data science projects, with many achievements.}
+\textbf{Research foundation} with 2 papers waiting for review at CVPR 2026.
 \end{justify}
 
 \end{itemize}
@@ -307,13 +315,13 @@ Set up \textbf{10+ API servers} to evaluate load balancing in \textbf{5+ cloud t
 
 \cvsection{Education}
 
-\cvevent{PhD Candidate in Computer Science}{\href{https://ucr.edu}{University of California, Riverside (UCR)}}{March 2027}{}
+\cvevent{PhD Candidate in Computer Science}{\href{https://ucr.edu}{University of California, Riverside (UCR)}}{Expected 2027}{}
 
 \begin{itemize}
 
 \item 
 \begin{justify}
-Research on Video Scene Graph Generation under Prof Bir Bhanu's guidance.
+Research on \textbf{Video Scene Graph Generation} under Prof Bir Bhanu's guidance.
 \end{justify}
 
 \end{itemize}
@@ -326,7 +334,7 @@ Research on Video Scene Graph Generation under Prof Bir Bhanu's guidance.
 
 \item 
 \begin{justify}
-\textcolor{emphasis}{\bfseries\href{https://ucrpc.cs.ucr.edu/F23/winners/index.html\#grad}{$1^{st}$/$2^{nd}$ Prizes} (over 100 teams) at UCR Programming Challenges 2023/2022.}
+\textcolor{emphasis}{\bfseries\href{https://ucrpc.cs.ucr.edu/F23/winners/index.html\#grad}{$1^{st}$}/\href{https://ucrpc.cs.ucr.edu/F22/winners/index.html\#grad}{$2^{nd}$} Prizes (over 100 teams) at UCR Programming Challenges 2023/2022.}
 \end{justify}
 
 % \item 
@@ -336,7 +344,7 @@ Research on Video Scene Graph Generation under Prof Bir Bhanu's guidance.
 
 \item 
 \begin{justify}
-Related courses: Deep Learning (A); Machine Learning (A); Data Mining Techniques (A); Design and Analysis Algorithms (A).
+Related courses: Data Mining Techniques, Deep Learning, Machine Learning, Design and Analysis Algorithms (all A).
 \end{justify}
 
 \end{itemize}
@@ -422,20 +430,12 @@ Related courses: NLP (A+); Computer Vision (A); \href{https://www.coursera.org/a
 \cvsection{Skills}
 
 \begin{itemize}
-\item
-\textbf{Language:} \underline{Python}, \underline{C++}, Go, Rust, Java, C\#
-\item
-\textbf{Web:} \underline{Typescript}, HTML, CSS, JavaScript
-\item
-\textbf{Framework:} \underline{Angular}, \underline{FastAPI}, \underline{Flask}, React
-\item
-\textbf{DL Framework:} \underline{PyTorch}, TensorFlow
-\item
-\textbf{Databases:} \underline{PostgreSQL}, \underline{MongoDB}
-\item
-\textbf{Tech:} \underline{K8s}, \underline{Nginx}, \underline{Prometheus}, \underline{Grafana}, Airflow, Kafka, Docker Swarm
-\item
-\textbf{Cloud:} \underline{Azure}, \underline{AWS}, \underline{GCP}, \underline{Vultr}
+\item \textbf{ML/DL:} PyTorch, Huggingface, WanDB, Decord
+\item \textbf{Language:} Python, Go, Rust, C++, Java
+\item \textbf{Infra:} K8s, Docker, Nginx, Grafana, Airflow, Prometheus
+\item \textbf{Cloud:} Vultr, Azure, AWS, GCP, Contabo
+\item \textbf{Web:} SolidJS, Angular, FastAPI, Flask
+\item \textbf{Databases:} PostgreSQL, MongoDB
 \end{itemize}
 % \cvhighlight{Python}
 % \cvhighlight{C++}
